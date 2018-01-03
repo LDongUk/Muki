@@ -1,0 +1,35 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\02. Scripts\PlayerCtrl2.cs">
+    <Files>
+      <File FileName="Assets\02. Scripts\PlayerCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\FollowCam.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\LivingEntity.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\IDamagable.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\Del_Effect.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\Item.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\PatrolPos.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\PlayerCtrl2.cs" Line="456" Column="4" />
+      <File FileName="Assets\02. Scripts\Background_effect.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\BigCubeSphear.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\BossMonster.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\Del_spawnCube.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\sound\SoundManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\JumpingMonster.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\EditorPathScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\MoveOnPathScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\GetPath.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\EnemyScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\Del_DieCube.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\PowerUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\FollowCam1.cs" Line="1" Column="1" />
+      <File FileName="Assets\02. Scripts\monster\NewMonster.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

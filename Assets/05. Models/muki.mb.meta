@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 6c8103bcd0050d44ba38326d062ecacc
+timeCreated: 1507391639
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ambientLight1
+    100002: arm_LF
+    100004: arm_RT
+    100006: back
+    100008: bar_LF
+    100010: bar_RT
+    100012: body
+    100014: imagePlane1
+    100016: imagePlane2
+    100018: leg_LF4
+    100020: leg_RT
+    100022: //RootNode
+    100024: pCube10
+    100026: pCube9
+    100028: polySurface1
+    100030: polySurface2
+    100032: polySurface3
+    100034: pTorus1
+    100036: pTorus2
+    100038: pTorus3
+    100040: pTorus4
+    100042: screw_LF
+    100044: screw_LF1
+    100046: tail
+    100048: tail_1
+    100050: tail_2
+    100052: tail_3
+    400000: ambientLight1
+    400002: arm_LF
+    400004: arm_RT
+    400006: back
+    400008: bar_LF
+    400010: bar_RT
+    400012: body
+    400014: imagePlane1
+    400016: imagePlane2
+    400018: leg_LF4
+    400020: leg_RT
+    400022: //RootNode
+    400024: pCube10
+    400026: pCube9
+    400028: polySurface1
+    400030: polySurface2
+    400032: polySurface3
+    400034: pTorus1
+    400036: pTorus2
+    400038: pTorus3
+    400040: pTorus4
+    400042: screw_LF
+    400044: screw_LF1
+    400046: tail
+    400048: tail_1
+    400050: tail_2
+    400052: tail_3
+    2000000: back
+    2300000: arm_LF
+    2300002: arm_RT
+    2300004: bar_LF
+    2300006: bar_RT
+    2300008: leg_LF4
+    2300010: leg_RT
+    2300012: pCube10
+    2300014: polySurface1
+    2300016: polySurface2
+    2300018: polySurface3
+    2300020: pTorus1
+    2300022: pTorus2
+    2300024: pTorus3
+    2300026: pTorus4
+    2300028: screw_LF
+    2300030: screw_LF1
+    2300032: tail
+    2300034: tail_1
+    2300036: tail_2
+    2300038: tail_3
+    3300000: arm_LF
+    3300002: arm_RT
+    3300004: bar_LF
+    3300006: bar_RT
+    3300008: leg_LF4
+    3300010: leg_RT
+    3300012: pCube10
+    3300014: polySurface1
+    3300016: polySurface2
+    3300018: polySurface3
+    3300020: pTorus1
+    3300022: pTorus2
+    3300024: pTorus3
+    3300026: pTorus4
+    3300028: screw_LF
+    3300030: screw_LF1
+    3300032: tail
+    3300034: tail_1
+    3300036: tail_2
+    3300038: tail_3
+    4300000: bar_RT
+    4300002: bar_LF
+    4300004: screw_LF
+    4300006: arm_LF
+    4300008: arm_RT
+    4300010: pTorus1
+    4300012: pTorus2
+    4300014: leg_LF4
+    4300016: tail_1
+    4300018: tail_2
+    4300020: tail_3
+    4300022: tail
+    4300024: leg_RT
+    4300026: pTorus3
+    4300028: pTorus4
+    4300030: polySurface1
+    4300032: polySurface2
+    4300034: polySurface3
+    4300036: screw_LF1
+    4300038: pCube10
+    9500000: //RootNode
+    10800000: ambientLight1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
