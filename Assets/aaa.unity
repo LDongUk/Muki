@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 3
+  distance: -50
   player: {fileID: 383061977}
 --- !u!1 &383061977
 GameObject:
@@ -377,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   jumpPow: 40
+  dashSpeed: 70
 --- !u!61 &383061984
 BoxCollider2D:
   m_ObjectHideFlags: 0
