@@ -11,20 +11,24 @@ public class PlayerCtrl : MonoBehaviour {
 	Animator animator;
 
 
-	//move
+	//Move
 	public float moveSpeed = 15f;
 	Vector3 moveDir = Vector3.right;
 
-	//jump
+	//Jump
 	public float jumpPow = 40f;
 	bool isJumping = false;
 	int maxJump = 1;
 	int jumpCount = 0;
 
-	//dash
+	//Dash
 	public float dashSpeed;
 	bool isDash = false;
 	bool isDashDelay = false;
+
+	//Damaged
+	bool isUnBeatTime = false;
+
 
 
 	//-------------------------------------------------------[Event Fuctions]
@@ -144,18 +148,39 @@ public class PlayerCtrl : MonoBehaviour {
 
 	//-------------------------------------------------------[Collision Function]
 
-	//Attach Event
+	//Attach Event when isTrigger is true
 	void OnTriggerEnter2D (Collider2D other){
 
-		//jump count reset
+		//Jump count reset
 		if (other.gameObject.tag == "Floor") {
 			jumpCount = 0;
 			isJumping = false;
 		}
 
+	
 	}
 
 
+	//Attach Event when isTrigger is false
+	void OnCollisionEnter2D(Collision2D other){
+
+		//Damaged
+		if (other.gameObject.tag == "Obstacle" && !isUnBeatTime) {
+
+			Vector2 attackedVelocity = Vector2.zero;
+
+			if (transform.position.x <= other.gameObject.transform.position.x)
+				attackedVelocity = new Vector2 (-10f, 35f);
+			else
+				attackedVelocity = new Vector2 (10f, 35f);
+
+			rigid.AddForce (attackedVelocity, ForceMode2D.Impulse);
+
+			isUnBeatTime = true;
+			StartCoroutine ("UnBeatTime");
+		}
+
+	}
 
 	//-------------------------------------------------------[Coroutine Function]
 			//-------------------------------------------------------[Dash]
@@ -176,6 +201,7 @@ public class PlayerCtrl : MonoBehaviour {
 		rigid.gravityScale = 1f;
 		rigid.velocity = Vector3.zero;
 
+		yield return null;
 	}
 
 
@@ -188,9 +214,35 @@ public class PlayerCtrl : MonoBehaviour {
 			yield return new WaitForSeconds (0.1f);
 
 		isDashDelay = false;
-	}
-			//-------------------------------------------------------[]
 
+		yield return null;
+	}
+			//-------------------------------------------------------[Damaged]
+
+	//No damaged while this coroutine operating
+	IEnumerator UnBeatTime(){
+		int countTime = 0;
+
+		//Color flicker
+		while (countTime < 10) {
+
+			if (countTime % 2 == 0)
+				render.color = new Color32 (255, 255, 255, 90);
+			else
+				render.color = new Color32 (255, 255, 255, 180);
+
+			yield return new WaitForSeconds (0.2f);
+
+			countTime++;
+		}
+
+		//Return to original color
+		render.color = new Color32 (255, 255, 255, 255);
+
+		isUnBeatTime = false;
+
+		yield return null;
+	}
 
 }
  

@@ -51,8 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\CanvasScreenSpaceScaler.cs" />
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\CanvasWorldScaler.cs" />
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\Internal\VectorSwizzleExtensions.cs" />
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelPerfectCamera.cs" />
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelSnap.cs" />
+     <Compile Include="Assets\PixelPerfectCamera\Scripts\Scroller.cs" />
      <Compile Include="Assets\Scripts\FollowCam.cs" />
      <Compile Include="Assets\Scripts\PlayerCtrl.cs" />
+     <None Include="Assets\PixelPerfectCamera\background_art_license.txt" />
+     <None Include="Assets\PixelPerfectCamera\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
