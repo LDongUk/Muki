@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muki 2D", "Assembly-CSharp-firstpass.csproj", "{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muki 2D", "Assembly-CSharp.csproj", "{FC324265-2BA6-2FFF-E60D-4B2457DEFCC2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muki 2D", "Assembly-CSharp-Editor-firstpass.csproj", "{EBDDBECD-51E6-AF43-5976-6568F555A9E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC324265-2BA6-2FFF-E60D-4B2457DEFCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC324265-2BA6-2FFF-E60D-4B2457DEFCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC324265-2BA6-2FFF-E60D-4B2457DEFCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC324265-2BA6-2FFF-E60D-4B2457DEFCC2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBDDBECD-51E6-AF43-5976-6568F555A9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBDDBECD-51E6-AF43-5976-6568F555A9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBDDBECD-51E6-AF43-5976-6568F555A9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBDDBECD-51E6-AF43-5976-6568F555A9E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

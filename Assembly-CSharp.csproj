@@ -57,8 +57,12 @@
      <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelPerfectCamera.cs" />
      <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelSnap.cs" />
      <Compile Include="Assets\PixelPerfectCamera\Scripts\Scroller.cs" />
-     <Compile Include="Assets\Scripts\FollowCam.cs" />
-     <Compile Include="Assets\Scripts\PlayerCtrl.cs" />
+     <Compile Include="Assets\Scripts\Logic\FollowCam.cs" />
+     <Compile Include="Assets\Scripts\Logic\PlayerCtrl.cs" />
+     <Compile Include="Assets\Scripts\Main Title\ButtonSellect.cs" />
+     <Compile Include="Assets\Scripts\Main Title\ScrollViewCtrl.cs" />
+     <Compile Include="Assets\Scripts\Player Data\PlayerData.cs" />
+     <Compile Include="Assets\Scripts\Save\SaveAndLoad.cs" />
      <None Include="Assets\PixelPerfectCamera\background_art_license.txt" />
      <None Include="Assets\PixelPerfectCamera\README.txt" />
  <Reference Include="UnityEngine.UI">
@@ -145,10 +149,6 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/coldn/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FA67B4F0-470A-AE01-E2FE-E63358B20E3D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
