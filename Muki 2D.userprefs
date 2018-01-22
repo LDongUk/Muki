@@ -1,13 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Title\ScrollViewCtrl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Setting Menu in Game\SettingMenuCtrl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Save\SaveAndLoad.cs" Line="28" Column="8" />
-      <File FileName="Assets\Scripts\Logic\PlayerCtrl.cs" Line="82" Column="35" />
+      <File FileName="Assets\Scripts\Save\SaveAndLoad.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Logic\PlayerCtrl.cs" Line="101" Column="6" />
       <File FileName="Assets\Scripts\Logic\FollowCam.cs" Line="16" Column="4" />
       <File FileName="Assets\Scripts\Player Data\PlayerData.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\Main Title\ButtonSellect.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\Main Title\ButtonSellect.cs" Line="29" Column="1" />
       <File FileName="Assets\Scripts\Main Title\ScrollViewCtrl.cs" Line="20" Column="4" />
+      <File FileName="Assets\Scripts\Main Title\SelectCtrl.cs" Line="25" Column="18" />
+      <File FileName="Assets\Scripts\Setting Menu in Game\SettingMenuCtrl.cs" Line="92" Column="47" />
+      <File FileName="Assets\Scripts\Setting Menu in Game\CanvasCtrl.cs" Line="30" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
