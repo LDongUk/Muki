@@ -32,6 +32,8 @@ public class PlayerCtrl : MonoBehaviour {
 	//Player Data
 	public static PlayerData playerData;
 
+	//Option Menu
+	public GameObject canvas;
 
 	//-------------------------------------------------------[Event Fuctions]
 
@@ -83,7 +85,8 @@ public class PlayerCtrl : MonoBehaviour {
 			if(!isDashDelay)
 				isDash = true;
 		}
-			
+
+		//Save (Test)
 		if (Input.GetButtonDown ("Save")) {
 			
 			playerData.positionX = transform.position.x;
@@ -91,6 +94,16 @@ public class PlayerCtrl : MonoBehaviour {
 
 			SaveAndLoad.Save ();
 		}
+
+		//Esc (Call the menu)
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			canvas.SetActive (true);
+			//GameObject.Find ("Select").transform.position = new Vector2 (GameObject.Find ("Select").transform.position.x, GameObject.Find ("Continue").transform.position.y);
+			GameObject.Find ("Canvas").GetComponent<CanvasCtrl> ().isActive = true;
+			Time.timeScale = 0f;
+
+		}
+
 	}
 
 	void FixedUpdate(){

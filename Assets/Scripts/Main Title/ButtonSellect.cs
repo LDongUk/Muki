@@ -26,9 +26,7 @@ public class ButtonSellect : MonoBehaviour
 		if(!isBlink)
 			StartCoroutine ("Blink");
 
-		if (Input.GetKey (KeyCode.Return)) {
-			SceneManager.LoadScene (1);
-		}
+
 	}
 
 

@@ -56,3 +56,9 @@ TagManager:
   - name: ForwardGround
     uniqueID: 10168065
     locked: 0
+  - name: MenuBackGround
+    uniqueID: 1217173741
+    locked: 0
+  - name: MenuSelect
+    uniqueID: 3496815645
+    locked: 0
