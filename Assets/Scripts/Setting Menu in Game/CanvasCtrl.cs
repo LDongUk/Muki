@@ -24,6 +24,7 @@ public class CanvasCtrl : MonoBehaviour {
 	}
 
 
+	//Exit menu
 	public void setDisactive(){
 		GameObject.Find ("Select").GetComponent<SettingMenuCtrl> ().isActive = false;
 		GameObject.Find ("Select").GetComponent<SettingMenuCtrl> ().current = 0;

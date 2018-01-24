@@ -35,7 +35,7 @@ public class SettingMenuCtrl : MonoBehaviour {
 			isActive = true;
 		}
 
-
+		//Menu is Activate
 		if (GameObject.Find("Canvas").GetComponent<CanvasCtrl> ().isActive) {
 
 
@@ -60,6 +60,7 @@ public class SettingMenuCtrl : MonoBehaviour {
 			}
 
 
+			//Select menu
 			if (Input.GetKey (KeyCode.Return)) {
 
 				switch (current) {

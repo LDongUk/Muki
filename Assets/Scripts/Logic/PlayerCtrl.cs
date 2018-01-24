@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 
 public class PlayerCtrl : MonoBehaviour {
@@ -15,6 +16,7 @@ public class PlayerCtrl : MonoBehaviour {
 	public float moveSpeed = 15f;
 	Vector3 moveDir = Vector3.right;
 
+
 	//Jump
 	public float jumpPow = 40f;
 	bool isJumping = false;
@@ -25,6 +27,8 @@ public class PlayerCtrl : MonoBehaviour {
 	public float dashSpeed;
 	bool isDash = false;
 	bool isDashDelay = false;
+	public float leftEnd;
+	public float rightEnd;
 
 	//Damaged
 	bool isUnBeatTime = false;
@@ -34,6 +38,10 @@ public class PlayerCtrl : MonoBehaviour {
 
 	//Option Menu
 	public GameObject canvas;
+
+	//Animation
+	float anim_timer = 0f;
+	float standing_time_delay = 0.1f;
 
 	//-------------------------------------------------------[Event Fuctions]
 
@@ -45,31 +53,17 @@ public class PlayerCtrl : MonoBehaviour {
 		render = gameObject.GetComponent<SpriteRenderer> ();
 		animator = gameObject.GetComponentInChildren<Animator> ();
 		playerData = new PlayerData ();
+		render.flipX = true;
 
-		if (File.Exists ("Saves/save.sav")) {
-		
-			SaveAndLoad.Load ();
-			transform.position = new Vector2 (playerData.positionX, playerData.positionY);
-		}
+//		if (File.Exists ("Saves/save.sav")) {
+//		
+//			SaveAndLoad.Load ();
+//			transform.position = new Vector2 (playerData.positionX, playerData.positionY);
+//		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		//move
-		if (Input.GetAxisRaw ("Horizontal") == 0) {
-			animator.SetBool ("isMoving", false);
-
-		}
-		else if (Input.GetAxisRaw ("Horizontal") < 0) {
-			animator.SetInteger ("Direction", -1);
-			animator.SetBool ("isMoving", true);
-			moveDir = Vector3.left;
-		} else if (Input.GetAxisRaw ("Horizontal") > 0) {
-			animator.SetInteger ("Direction", 1);
-			animator.SetBool ("isMoving", true);
-			moveDir = Vector3.right;
-		}
 
 
 		//Jump
@@ -86,13 +80,14 @@ public class PlayerCtrl : MonoBehaviour {
 				isDash = true;
 		}
 
+
 		//Save (Test)
 		if (Input.GetButtonDown ("Save")) {
 			
 			playerData.positionX = transform.position.x;
 			playerData.positionY = transform.position.y;
-
-			SaveAndLoad.Save ();
+			playerData.SceneID = SceneManager.GetActiveScene ().buildIndex;
+			SaveAndLoad.Save (playerData.saveNumber);
 		}
 
 		//Esc (Call the menu)
@@ -123,23 +118,29 @@ public class PlayerCtrl : MonoBehaviour {
 		if (isDash)
 			return;
 
-		Vector3 moveVelocity = Vector3.zero;
 
 		if (Input.GetAxisRaw ("Horizontal") == 0) {
-			animator.SetBool ("isMoving", false);
-			return;
+			anim_timer += Time.deltaTime;
+
+			if (anim_timer > standing_time_delay) {
+				animator.SetBool ("isMoving", false);
+				return;
+			}
 		}
 		else{
 			animator.SetBool ("isMoving", true);
+			anim_timer = 0f;
 			if (Input.GetAxisRaw ("Horizontal") < 0) {
-				moveVelocity = Vector3.left;
-				render.flipX = true;
-			} else if (Input.GetAxisRaw ("Horizontal") > 0) {
-				moveVelocity = Vector3.right;
+				animator.SetInteger ("Direction", -1);
+				moveDir = Vector2.left;
 				render.flipX = false;
+			} else if (Input.GetAxisRaw ("Horizontal") > 0) {
+				animator.SetInteger ("Direction", 1);
+				moveDir = Vector2.right;
+				render.flipX = true;
 			}
 		}
-		transform.position += moveVelocity * moveSpeed * Time.deltaTime;
+		transform.position += moveDir * moveSpeed * Time.deltaTime;
 
 	}
 
@@ -170,14 +171,13 @@ public class PlayerCtrl : MonoBehaviour {
 
 		isDashDelay = true;
 		StartCoroutine ("DashDelay");
-
 	}
 
 
 	//-------------------------------------------------------[Collision Function]
 
 	//Attach Event when isTrigger is true
-	void OnTriggerEnter2D (Collider2D other){
+	void OnTriggerStay2D (Collider2D other){
 
 		//Jump count reset
 		if (other.gameObject.tag == "Floor") {
@@ -190,7 +190,7 @@ public class PlayerCtrl : MonoBehaviour {
 
 
 	//Attach Event when isTrigger is false
-	void OnCollisionEnter2D(Collision2D other){
+	void OnCollisionStay2D(Collision2D other){
 
 		//Damaged
 		if (other.gameObject.tag == "Obstacle" && !isUnBeatTime) {
@@ -207,7 +207,6 @@ public class PlayerCtrl : MonoBehaviour {
 			isUnBeatTime = true;
 			StartCoroutine ("UnBeatTime");
 		}
-
 	}
 
 	//-------------------------------------------------------[Coroutine Function]
@@ -221,10 +220,11 @@ public class PlayerCtrl : MonoBehaviour {
 		rigid.velocity = Vector3.zero;
 		rigid.gravityScale = 0f;
 
-		Vector3 dashDir = moveDir;
 		for (int i = 0; i < dashLoop; i++) {
-			transform.position += dashDir * dashSpeed * Time.deltaTime;
-			yield return new WaitForSeconds(0.015f);
+			if (leftEnd < transform.position.x && transform.position.x < rightEnd)
+				transform.position += moveDir * dashSpeed * Time.deltaTime;
+			yield return new WaitForSeconds (0.015f);
+			
 		}
 		rigid.gravityScale = 1f;
 		rigid.velocity = Vector3.zero;

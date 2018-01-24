@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Obstacle
   - Button
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,7 @@ TagManager:
     locked: 0
   - name: MenuSelect
     uniqueID: 3496815645
+    locked: 0
+  - name: SaveSelect
+    uniqueID: 220313137
     locked: 0

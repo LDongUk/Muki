@@ -10,15 +10,21 @@ public class SaveAndLoad : MonoBehaviour {
 
 
 	//Save data at Saves/save.sav file
-	public static void Save(){
+	public static void Save(int saveNum){
 
 		if (!Directory.Exists ("Saves"))
 			Directory.CreateDirectory ("Saves");
 
 		BinaryFormatter formatter = new BinaryFormatter ();
-		FileStream saveFile = File.Create ("Saves/save.sav");
+		FileStream saveFile;
+		if (File.Exists ("Saves/save" + saveNum.ToString () + ".sav"))
+			saveFile = File.Open ("Saves/save" + saveNum.ToString () + ".sav", FileMode.Open);
+		else
+			saveFile = File.Create ("Saves/save" + saveNum.ToString() + ".sav");
 
-		LocalCopyOfData = PlayerCtrl.playerData;
+		PlayerData playerdata = new PlayerData ();
+		LocalCopyOfData = playerdata;
+		LocalCopyOfData.saveNumber = saveNum;
 
 		formatter.Serialize (saveFile, LocalCopyOfData);
 
@@ -26,15 +32,25 @@ public class SaveAndLoad : MonoBehaviour {
 	}
 
 	//Load data at Saves/save.sav file
-	public static void Load(){
+	public static void Load(int saveNum){
 
 		BinaryFormatter formatter = new BinaryFormatter ();
-		FileStream saveFile = File.Open ("Saves/save.sav", FileMode.Open);
+		FileStream saveFile = File.Open ("Saves/save" + saveNum.ToString() + ".sav", FileMode.Open);
 
 		LocalCopyOfData = (PlayerData)formatter.Deserialize (saveFile);
 		PlayerCtrl.playerData = LocalCopyOfData;
 		saveFile.Close ();
 	
+	}
+
+	public static void SetTitleMenu(int saveNum){
+		BinaryFormatter formatter = new BinaryFormatter ();
+		FileStream saveFile = File.Open ("Saves/save" + saveNum.ToString() + ".sav", FileMode.Open);
+
+		LocalCopyOfData = (PlayerData)formatter.Deserialize (saveFile);
+		SetNewMenu.playerData = LocalCopyOfData;
+
+		saveFile.Close ();
 	}
 }
 	

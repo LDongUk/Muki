@@ -3,14 +3,14 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonSellect : MonoBehaviour
+public class ButtonSelect : MonoBehaviour
 {
 	
-	Image myImage;
-	int alpha;
+	public Image myImage;
+	public int alpha;
 
-	bool increase = false;
-	bool isBlink = false;
+	public bool increase = false;
+	public bool isBlink = false;
 
 	// Use this for initialization
 	void Start ()
@@ -22,7 +22,7 @@ public class ButtonSellect : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
+		
 		if(!isBlink)
 			StartCoroutine ("Blink");
 
@@ -38,10 +38,12 @@ public class ButtonSellect : MonoBehaviour
 		isBlink = true;
 		int time = 50;
 
+
+
 		if (increase) {
 			for (int i = 0; i < time; i++) {
 				alpha += 5;
-				myImage.color = new Color32 (255, 255, 255, (byte) alpha);
+				myImage.color = new Color32 (150, 150, 200, (byte) alpha);
 				yield return new WaitForSeconds (0.01f);
 			}
 
@@ -52,7 +54,7 @@ public class ButtonSellect : MonoBehaviour
 		else {
 			for(int i = 0; i < time; i++){
 				alpha -= 5;
-				myImage.color = new Color32 (255, 255, 255, (byte) alpha);
+				myImage.color = new Color32 (150, 150, 200, (byte) alpha);
 				yield return new WaitForSeconds (0.01f);
 			}
 
