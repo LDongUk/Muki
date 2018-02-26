@@ -77,29 +77,26 @@ public class ScrollViewCtrl : MonoBehaviour {
 			oneButton = false;
 		}
 
-		//Select menu
+		//Select menu by keyboard
 		if (Input.GetKeyDown (KeyCode.Return)) {
 
 			switch (current) {
 			case 0:
-				SceneManager.LoadScene (1);
-				break;
-
-			case 1:
 				newMenu.SetActive (true);
 				text_muki.SetActive (false);
 				Menu.SetActive (false);
 				break;
+			case 1:
+				break;
 			case 2:
 				break;
 			case 3:
-				break;
-			case 4:
 				Application.Quit ();
 				break;
 			}
 
 		}
+
 
 	}
 

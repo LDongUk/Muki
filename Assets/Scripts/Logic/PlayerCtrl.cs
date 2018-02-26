@@ -55,11 +55,7 @@ public class PlayerCtrl : MonoBehaviour {
 		playerData = new PlayerData ();
 		render.flipX = true;
 
-//		if (File.Exists ("Saves/save.sav")) {
-//		
-//			SaveAndLoad.Load ();
-//			transform.position = new Vector2 (playerData.positionX, playerData.positionY);
-//		}
+
 	}
 	
 	// Update is called once per frame

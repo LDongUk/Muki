@@ -8,6 +8,7 @@ public class NewSelectCtrl : MonoBehaviour
 {
 
 	public List<GameObject> buttons;
+	public List<GameObject> dels;
 	public GameObject Menu, text_muki;
 	public GameObject SaveSelect;
 	int current = 0;
@@ -18,6 +19,9 @@ public class NewSelectCtrl : MonoBehaviour
 	{
 		for (int i = 1; i < buttons.Count; i++)
 			buttons [i].SetActive (false);
+
+		for (int i = 0; i < dels.Count; i++)
+			dels [i].SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -39,9 +43,13 @@ public class NewSelectCtrl : MonoBehaviour
 			case 3:
 
 //				if (File.Exists ("Saves/save" + (current + 1).ToString () + ".sav")) {
-//					/*
-//					  Ask really?
-//					*/
+//
+//					SaveAndLoad.Load (current + 1);
+//					PlayerData player = new PlayerData ();
+//
+//
+//					SceneManager.LoadScene (1);
+//
 //				} else {
 //					PlayerData playerdata = new PlayerData ();
 //					playerdata.saveNumber = current + 1;
@@ -86,6 +94,7 @@ public class NewSelectCtrl : MonoBehaviour
 	void KeyDown(){
 
 		buttons [current].SetActive (false);
+		//dels [current].SetActive (false);
 
 		if (current == buttons.Count - 1)
 			current = 0;
@@ -101,17 +110,15 @@ public class NewSelectCtrl : MonoBehaviour
 		GameObject.Find ("Start").GetComponent<ButtonSelect> ().increase = false;
 		GameObject.Find ("Start").GetComponent<ButtonSelect> ().alpha = 250;
 
-		GameObject.Find ("New").GetComponent<ButtonSelect> ().isBlink = false;
-		GameObject.Find ("New").GetComponent<ButtonSelect> ().increase = false;
-		GameObject.Find ("New").GetComponent<ButtonSelect> ().alpha = 250;
-
-		GameObject.Find ("Load").GetComponent<ButtonSelect> ().isBlink = false;
-		GameObject.Find ("Load").GetComponent<ButtonSelect> ().increase = false;
-		GameObject.Find ("Load").GetComponent<ButtonSelect> ().alpha = 250;
-
 		GameObject.Find ("Option").GetComponent<ButtonSelect> ().isBlink = false;
 		GameObject.Find ("Option").GetComponent<ButtonSelect> ().increase = false;
 		GameObject.Find ("Option").GetComponent<ButtonSelect> ().alpha = 250;
+
+
+		GameObject.Find ("ETC").GetComponent<ButtonSelect> ().isBlink = false;
+		GameObject.Find ("ETC").GetComponent<ButtonSelect> ().increase = false;
+		GameObject.Find ("ETC").GetComponent<ButtonSelect> ().alpha = 250;
+
 
 		GameObject.Find ("Exit").GetComponent<ButtonSelect> ().isBlink = false;
 		GameObject.Find ("Exit").GetComponent<ButtonSelect> ().increase = false;

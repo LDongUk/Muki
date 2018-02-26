@@ -28,6 +28,10 @@ public class SaveAndLoad : MonoBehaviour {
 
 		formatter.Serialize (saveFile, LocalCopyOfData);
 
+
+
+
+
 		saveFile.Close ();
 	}
 
@@ -40,7 +44,7 @@ public class SaveAndLoad : MonoBehaviour {
 		LocalCopyOfData = (PlayerData)formatter.Deserialize (saveFile);
 		PlayerCtrl.playerData = LocalCopyOfData;
 		saveFile.Close ();
-	
+
 	}
 
 	public static void SetTitleMenu(int saveNum){

@@ -60,7 +60,7 @@
      <Compile Include="Assets\Scripts\Logic\FollowCam.cs" />
      <Compile Include="Assets\Scripts\Logic\PlayerCtrl.cs" />
      <Compile Include="Assets\Scripts\Main Title\ButtonSelect.cs" />
-     <Compile Include="Assets\Scripts\Main Title\Load\SetLoadMenu.cs" />
+     <Compile Include="Assets\Scripts\Main Title\ExitGame.cs" />
      <Compile Include="Assets\Scripts\Main Title\New\NewSelectCtrl.cs" />
      <Compile Include="Assets\Scripts\Main Title\New\SetNewMenu.cs" />
      <Compile Include="Assets\Scripts\Main Title\ScrollViewCtrl.cs" />
