@@ -7,21 +7,24 @@ using System.IO;
 public class PlayerCtrl : MonoBehaviour {
 
 
-	Rigidbody2D rigid;
+	public Rigidbody2D rigid;
 	SpriteRenderer render;
-	Animator animator;
+	public Animator animator;
 
 
 	//Move
 	public float moveSpeed = 15f;
-	Vector3 moveDir = Vector3.right;
-
+	public Vector3 moveDir = Vector3.right;
+	public bool isLeftWall = false;
+	public bool isRightWall = false;
 
 	//Jump
 	public float jumpPow = 40f;
 	bool isJumping = false;
 	int maxJump = 1;
 	int jumpCount = 0;
+
+
 
 	//Dash
 	public float dashSpeed;
@@ -38,6 +41,11 @@ public class PlayerCtrl : MonoBehaviour {
 
 	//Option Menu
 	public GameObject canvas;
+
+	//Attack
+	public GameObject firstAttack;
+	public bool isAttacking = false;
+	public bool isSecondAttack = false;
 
 	//Animation
 	float anim_timer = 0f;
@@ -61,6 +69,8 @@ public class PlayerCtrl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//Attack
+		Attack();
 
 		//Jump
 		if (Input.GetAxisRaw("Jump") > 0)
@@ -68,7 +78,7 @@ public class PlayerCtrl : MonoBehaviour {
 
 		if (Input.GetButtonUp ("Jump")) {
 			if(rigid.velocity.y >= 0)
-				rigid.velocity = Vector3.zero;
+				rigid.velocity = Vector2.zero;
 		}
 		//Dash
 		if (Input.GetButtonDown ("Dash")) {
@@ -95,10 +105,10 @@ public class PlayerCtrl : MonoBehaviour {
 
 		}
 
+
 	}
 
 	void FixedUpdate(){
-		
 		Move ();
 		Jump ();
 		Dash ();
@@ -111,9 +121,8 @@ public class PlayerCtrl : MonoBehaviour {
 	//Move logic
 	void Move(){
 
-		if (isDash)
+		if (isDash || isAttacking)
 			return;
-
 
 		if (Input.GetAxisRaw ("Horizontal") == 0) {
 			anim_timer += Time.deltaTime;
@@ -130,13 +139,23 @@ public class PlayerCtrl : MonoBehaviour {
 				animator.SetInteger ("Direction", -1);
 				moveDir = Vector2.left;
 				render.flipX = false;
+
+				if (isRightWall)
+					isRightWall = false;
+				
+
 			} else if (Input.GetAxisRaw ("Horizontal") > 0) {
 				animator.SetInteger ("Direction", 1);
 				moveDir = Vector2.right;
 				render.flipX = true;
+
+				if (isLeftWall)
+					isLeftWall = false;
 			}
 		}
-		transform.position += moveDir * moveSpeed * Time.deltaTime;
+
+		if (!isLeftWall && !isRightWall)
+			transform.position += moveDir * moveSpeed * Time.deltaTime;
 
 	}
 
@@ -153,6 +172,48 @@ public class PlayerCtrl : MonoBehaviour {
 		rigid.AddForce (jumpVelocity, ForceMode2D.Impulse);
 		jumpCount++;
 	}
+
+	//-------------------------------------------------------[Attack Function]
+
+	void Attack(){
+
+		//Input "Attack" key
+		if (Input.GetButtonDown ("Attack"))
+			isAttacking = true;
+		
+		//If input "Attack" key, pass this return.
+		if (!isAttacking) {
+			animator.SetBool ("isAttack", false);
+			return;
+		}
+
+		if (!isSecondAttack) {
+			animator.SetBool ("isSecondAttack", false);
+
+		}
+
+			
+		//Activate first attack
+			
+		firstAttack.GetComponent<FirstAttack> ().isActive = true;
+		firstAttack.SetActive (true);
+		rigid.velocity = Vector2.zero;
+		rigid.AddForce (moveDir * 30f, ForceMode2D.Impulse);
+
+		//animation for attack
+		animator.SetBool ("isAttack", true);
+
+
+		if (isSecondAttack) {
+			animator.SetBool ("isSecondAttack", true);
+		}
+
+
+
+	}
+
+
+
 
 
 	//-------------------------------------------------------[Skill Function]
@@ -173,39 +234,89 @@ public class PlayerCtrl : MonoBehaviour {
 	//-------------------------------------------------------[Collision Function]
 
 	//Attach Event when isTrigger is true
-	void OnTriggerStay2D (Collider2D other){
-
+	void OnTriggerEnter2D(Collider2D other){
 		//Jump count reset
 		if (other.gameObject.tag == "Floor") {
 			jumpCount = 0;
 			isJumping = false;
 		}
-
-	
 	}
+
+//	//Attach Event when isTrigger is true
+//	void OnTriggerStay2D (Collider2D other){
+//
+//		//Jump count reset
+//		if (other.gameObject.tag == "Floor") {
+//			jumpCount = 0;
+//			isJumping = false;
+//		}
+//			
+//	
+//	}
 
 
 	//Attach Event when isTrigger is false
 	void OnCollisionStay2D(Collision2D other){
 
 		//Damaged
-		if (other.gameObject.tag == "Obstacle" && !isUnBeatTime) {
+		if (other.gameObject.tag == "Monster") {
 
-			Vector2 attackedVelocity = Vector2.zero;
+			if (!isUnBeatTime) {
 
-			if (transform.position.x <= other.gameObject.transform.position.x)
-				attackedVelocity = new Vector2 (-10f, 35f);
-			else
-				attackedVelocity = new Vector2 (10f, 35f);
+				Vector2 attackedVelocity = Vector2.zero;
 
-			rigid.AddForce (attackedVelocity, ForceMode2D.Impulse);
+				if (transform.position.x <= other.gameObject.transform.position.x)
+					attackedVelocity = new Vector2 (-50f, 35f);
+				else
+					attackedVelocity = new Vector2 (50f, 35f);
 
-			isUnBeatTime = true;
-			StartCoroutine ("UnBeatTime");
+				rigid.AddForce (attackedVelocity, ForceMode2D.Impulse);
+
+				isUnBeatTime = true;
+				StartCoroutine ("UnBeatTime");
+			}
+		}
+
+		if (other.gameObject.tag == "LeftWall") {
+			isLeftWall = true;
+		}
+
+		if (other.gameObject.tag == "RightWall") {
+			isRightWall = true;
+		}
+
+		if (other.gameObject.tag == "Ceiling") {
+			rigid.velocity = Vector2.zero;
 		}
 	}
 
+	void OnCollisionExit2D(Collision2D other){
+		if (other.gameObject.tag == "LeftWall") {
+			isLeftWall = false;
+		}
+
+		if (other.gameObject.tag == "RightWall") {
+			isRightWall = false;
+		}
+
+		if (other.gameObject.tag == "Floor") {
+			jumpCount++;
+		}
+
+	
+	}
+
 	//-------------------------------------------------------[Coroutine Function]
+			//-------------------------------------------------------[Jump]
+	IEnumerator JumpDelay(){
+		int delayLoop = 10;
+		for (int i = 0; i < delayLoop; i++) {
+			yield return new WaitForSeconds (0.1f);
+		}
+
+		jumpCount = 0;
+		isJumping = false;
+	}
 			//-------------------------------------------------------[Dash]
 
 	//Dash logic

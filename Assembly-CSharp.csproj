@@ -57,13 +57,16 @@
      <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelPerfectCamera.cs" />
      <Compile Include="Assets\PixelPerfectCamera\Scripts\PixelSnap.cs" />
      <Compile Include="Assets\PixelPerfectCamera\Scripts\Scroller.cs" />
+     <Compile Include="Assets\Scripts\Logic\FirstAttack.cs" />
      <Compile Include="Assets\Scripts\Logic\FollowCam.cs" />
      <Compile Include="Assets\Scripts\Logic\PlayerCtrl.cs" />
+     <Compile Include="Assets\Scripts\Logic\SecondAttack.cs" />
      <Compile Include="Assets\Scripts\Main Title\ButtonSelect.cs" />
      <Compile Include="Assets\Scripts\Main Title\ExitGame.cs" />
      <Compile Include="Assets\Scripts\Main Title\New\NewSelectCtrl.cs" />
      <Compile Include="Assets\Scripts\Main Title\New\SetNewMenu.cs" />
      <Compile Include="Assets\Scripts\Main Title\ScrollViewCtrl.cs" />
+     <Compile Include="Assets\Scripts\Monster\TestMonster.cs" />
      <Compile Include="Assets\Scripts\Player Data\PlayerData.cs" />
      <Compile Include="Assets\Scripts\Save\SaveAndLoad.cs" />
      <Compile Include="Assets\Scripts\Setting Menu in Game\CanvasCtrl.cs" />

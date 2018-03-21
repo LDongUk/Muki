@@ -7,7 +7,12 @@ TagManager:
   - Floor
   - Obstacle
   - Button
-  - Wall
+  - LeftWall
+  - RightWall
+  - Ceiling
+  - Attack Damage 1
+  - Attack Damage 2
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -53,6 +58,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2975682245
+    locked: 0
+  - name: FirstAttack
+    uniqueID: 834539051
+    locked: 0
+  - name: SecondAttack
+    uniqueID: 3468383299
     locked: 0
   - name: ForwardGround
     uniqueID: 10168065

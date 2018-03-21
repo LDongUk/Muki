@@ -1,6 +1,5 @@
 WindowsStandalone
 SceneListBegin?
-Assets/MainTitle.unity
 Assets/1.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -15,7 +14,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-19fd3839372632ac755627a6a4c78dfc Assembly-CSharp.dll:.NewSelectCtrl
+b1dfda2e0359812da276c82c5d43aef6 Assembly-CSharp.dll:.NewSelectCtrl
 a4285e10087b40d77739e4b17f8b2a76 Assembly-CSharp.dll:.SettingMenuCtrl
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -49,7 +48,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-72cee356baf5a13fedb7eb91e053dbc6 Assembly-CSharp.dll:.FollowCam
+21f3b3f5e35a8a48a632e5e2a527e8f8 Assembly-CSharp.dll:.FollowCam
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -150,8 +149,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 4d31073bd32611fa04ccc174ddf8002f Assembly-CSharp.dll:.ScrollViewCtrl
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ExitGame
 a1a5d6cca21ea046807aed7846c0c177 Assembly-CSharp.dll:.PixelPerfectCamera
-91e56fd5f505c04c7e7dac41fdb3de6a Assembly-CSharp.dll:.PlayerCtrl
+8090df31cccf9038f6fb714d1f369c73 Assembly-CSharp.dll:.PlayerCtrl
 d146d3d8148b2f35a8c7980d63a88f0e Assembly-CSharp.dll:.CanvasWorldScaler
 c7f20592818291995a61fe181b5cc72c Assembly-CSharp.dll:.SetNewMenu
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ExitGame
+be742704015b1565b0e2cfe8a822d42e Assembly-CSharp.dll:.FirstAttack
+47dc1bea2bbc4503384780f03b4e532f Assembly-CSharp.dll:.SecondAttack
+ad0843dc5844295eb779e75691b6f0e1 Assembly-CSharp.dll:.TestMonster

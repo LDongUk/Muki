@@ -61,7 +61,6 @@ public class ButtonSelect : MonoBehaviour
 			increase = true;
 		}
 		isBlink = false;
-
 	}
 
 }
